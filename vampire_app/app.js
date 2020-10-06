@@ -1,11 +1,11 @@
 // 1. Require Mongoose
-
+const mongoose = require('mongoose')
 // 2. Require your Model
-
+const vampire = require('./models/vampire')
 // 3. Require your extra data source
-
+const populateVampires = require('./populateVampires')
 // 4. Connect your database
-
+const connectionString = 'mongodb://localhost:27017/mongoose-vampires'
 /////////////////////////////////////////////////
 //Write your answers to add, query, update, remove, and Hungry for More below.
 
