@@ -178,17 +178,41 @@ const newVampires =[
 //   console.log(vampires);
 //   process.exit();
 // });
-db.Vampire.find({
-  loves: {$in: 'fancy cloaks', $nin: 'top hats', $nin: 'virgin blood'},
-}, 
-  (err, vampires) => {
-  if (err) console.log(err);
-  console.log(vampires);
-  process.exit();
-});
+// db.Vampire.find({
+//   loves: {$in: 'fancy cloaks', $nin: 'top hats', $nin: 'virgin blood'},
+// }, 
+//   (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
+
 /////////////////////////////////////////////////
 //### Negative Selection
-
+// db.Vampire.find({
+//   loves: 'ribbons', eye_color: {$nin: 'brown'}
+// }, 
+//   (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
+// db.Vampire.find({location: {$nin: 'Rome'}}, (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
+// db.Vampire.find({loves: {$nin: ['fancy cloaks', 'frilly shirtsleeves', 'appearing innocent', 'being tragic', 'brooding']}}, (err, vampires) => {
+  //   if (err) console.log(err);
+  //   console.log(vampires);
+  //   process.exit();
+// });
+// db.Vampire.find({victims: {$not: {$gt: 200}}}, 
+//   (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
