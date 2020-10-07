@@ -140,19 +140,52 @@ const newVampires =[
 //   console.log(vampires);
 //   process.exit();
 // });
+// db.Vampire.find({
+//   $or: [{hair_color: 'red'},
+//   {eye_color: 'green'}],
+// }, 
+//   (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
+
+
+/////////////////////////////////////////////////
+//### Select objects that match one of several values
+// db.Vampire.find({
+//   $or: [{loves: 'shirtsleeves'},
+//   {loves: 'frilly collars'}],
+// }, 
+//   (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
+// db.Vampire.find({loves: 'brooding'}, (err, vampires) => {
+  //   if (err) console.log(err);
+  //   console.log(vampires);
+  //   process.exit();
+  // });
+// db.Vampire.find({
+//   $or: [{loves: 'appearing innocent'},
+//   {loves: 'trickery'},
+//   {loves: 'lurking in rotting mansions'},
+//   {loves: 'R&B music'},],
+// }, 
+//   (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
 db.Vampire.find({
-  $or: [{hair_color: 'red'},
-  {eye_color: 'green'}],
+  loves: {$in: 'fancy cloaks', $nin: 'top hats', $nin: 'virgin blood'},
 }, 
   (err, vampires) => {
   if (err) console.log(err);
   console.log(vampires);
   process.exit();
 });
-
-/////////////////////////////////////////////////
-//### Select objects that match one of several values
-
 /////////////////////////////////////////////////
 //### Negative Selection
 
