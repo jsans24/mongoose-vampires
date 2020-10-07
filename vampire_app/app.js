@@ -83,13 +83,33 @@ const newVampires =[
 //   console.log(vampires);
 //   process.exit();
 // });
-db.Vampire.find({victims: {$gt: 150, $lt: 500}}, (err, vampires) => {
+// db.Vampire.find({victims: {$gt: 150, $lt: 500}}, (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
+/////////////////////////////////////////////////
+// ### Select by exists or does not exist
+// db.Vampire.find({title: {$exists: true}}, (err, vampires) => {
+  // if (err) console.log(err);
+  // console.log(vampires);
+  // process.exit();
+// });
+// db.Vampire.find({victims: {$exists: false}}, (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
+// db.Vampire.find({title: {$exists: true}, victims: {$exists: false}}, (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
+db.Vampire.find({victims: {$exists: true, $gt: 1000}}, (err, vampires) => {
   if (err) console.log(err);
   console.log(vampires);
   process.exit();
 });
-/////////////////////////////////////////////////
-// ### Select by exists or does not exist
 
 /////////////////////////////////////////////////
 // ### Select with OR
