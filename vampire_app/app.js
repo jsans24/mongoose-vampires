@@ -54,17 +54,40 @@ const newVampires =[
 //   process.exit();
 // });
 // ### Add some new vampire data
-  db.Vampire.create(newVampires, (err, newVampirelist) => {
-    if (err) console.log(err);
-    console.log(newVampirelist);
-    process.exit();
-  });
-
+  // db.Vampire.create(newVampires, (err, newVampirelist) => {
+  //   if (err) console.log(err);
+  //   console.log(newVampirelist);
+  //   process.exit();
+  // });
 /////////////////////////////////////////////////
 // ## QUERYING
 /////////////////////////////////////////////////
 // ### Select by comparison
-
+// db.Vampire.find({gender: 'f'}, (err, femaleVampires) => {
+//   if (err) console.log(err);
+//   console.log(femaleVampires);
+//   process.exit();
+// });
+// db.Vampire.find({victims: {$gt: 500}}, (err, killingVampires) => {
+//   if (err) console.log(err);
+//   console.log(killingVampires);
+//   process.exit();
+// });
+// db.Vampire.find({victims: {$lte: 150}}, (err, harmlessVampires) => {
+//   if (err) console.log(err);
+//   console.log(harmlessVampires);
+//   process.exit();
+// });
+// db.Vampire.find({victims: {$ne: 210234}}, (err, vampires) => {
+//   if (err) console.log(err);
+//   console.log(vampires);
+//   process.exit();
+// });
+db.Vampire.find({victims: {$gt: 150, $lt: 500}}, (err, vampires) => {
+  if (err) console.log(err);
+  console.log(vampires);
+  process.exit();
+});
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
 
