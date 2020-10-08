@@ -235,7 +235,21 @@ const eve = {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
-
+// db.Vampire.findByIdAndUpdate('5f7e5a2c8c99efeb6548275d', {$set: {gender: 'm'}},{new: true}, (err, vampire) =>{ 
+//   if (err) console.log(err);
+//   console.log(vampire);
+//   process.exit()
+// });
+// db.Vampire.findByIdAndUpdate('5f7e5a2c8c99efeb6548275d', {$rename: {name: 'moniker'}},{new: true}, (err, vampire) =>{ 
+//   if (err) console.log(err);
+//   console.log(vampire);
+//   process.exit()
+// });
+db.Vampire.updateMany({gender: 'f'}, {$set: {gender: 'fems'}},{new: true}, (err, vampire) =>{ 
+  if (err) console.log(err);
+  console.log(vampire);
+  process.exit()
+});
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
