@@ -44,6 +44,17 @@ const newVampires =[
     victims: 8321
   },
 ];
+
+const eve = {
+  name: 'Eve',
+  dob: new Date(1999, 12, 31, 23, 59),
+  hair_color: 'brown',
+  eye_color: 'brown',
+  loves: ['New Years', 'Batman', 'Parties'],
+  gender: 'f',
+  victims: 38
+}
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // INSERT USING MONGOOSE
@@ -216,7 +227,11 @@ const newVampires =[
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
-
+// db.Vampire.findByIdAndUpdate('5f7e5a2c8c99efeb6548275d', {$set: eve},{new: true}, (err, vampire) =>{ 
+//   if (err) console.log(err);
+//   console.log(vampire);
+//   process.exit()
+// });
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## UPDATE
