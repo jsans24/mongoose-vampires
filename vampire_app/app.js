@@ -245,15 +245,25 @@ const eve = {
 //   console.log(vampire);
 //   process.exit()
 // });
-db.Vampire.updateMany({gender: 'f'}, {$set: {gender: 'fems'}},{new: true}, (err, vampire) =>{ 
+// db.Vampire.updateMany({gender: 'f'}, {$set: {gender: 'fems'}},{new: true}, (err, vampire) =>{ 
+//   if (err) console.log(err);
+//   console.log(vampire);
+//   process.exit()
+// });
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// ## REMOVE
+// db.Vampire.findOneAndDelete({hair_color: 'brown'}, (err, vampire) =>{ 
+//   if (err) console.log(err);
+//   console.log(vampire);
+//   process.exit()
+// });
+db.Vampire.deleteMany({eye_color: 'blue'}, (err, vampire) =>{ 
   if (err) console.log(err);
   console.log(vampire);
   process.exit()
 });
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// ## REMOVE
-
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 
